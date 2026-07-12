@@ -19,7 +19,7 @@ This workflow demonstrates how AI can automate resume evaluation and assist recr
 
 The workflow compares a resume with a job description using an AI Agent. The resume and job description are merged into a single input, analyzed by the AI model, and returned as structured feedback using a Structured Output Parser.
 
-![Workflow Overview](screenshots/01-workflow-overview.png)
+![Workflow Overview](01-workflow-overview.png)
 
 ## 📝 Sample Input
 
@@ -29,25 +29,25 @@ The workflow accepts two text inputs before sending them to the AI Agent.
 
 This node contains the candidate's resume information used for analysis.
 
-![Resume Input](screenshots/02-resume-input.png)
+![Resume Input](resume input.png)
 
 ### 💼 Job Description Input
 
 This node contains the job requirements that will be compared against the candidate's resume.
 
-![Job Description Input](screenshots/03-job-description-input.png)
+![Job Description Input](job description input.png)
 
 ## 🤖 AI Analysis
 
 After receiving the resume and job description, the AI Agent analyzes both inputs and generates structured feedback. The analysis includes the candidate's strengths, weaknesses, and recommendations for improving their fit for the position.
 
-![AI Analysis](screenshots/04-ai-analysis.png)
+![AI Analysis](04-ai-analysis.png)
 
 ## ✅ Workflow Execution
 
 The screenshot below shows a successful execution of the workflow in n8n. All nodes completed successfully, demonstrating the end-to-end automation from data input to AI-generated analysis.
 
-![Workflow Execution](screenshots/05-workflow-execution.png)
+![Workflow Execution](workflow-execution.png)
 
 ## 🛠 Technologies Used
 
