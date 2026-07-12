@@ -1,0 +1,215 @@
+{
+  "name": "Resume vs Job Description Matcher",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -464,
+        -192
+      ],
+      "id": "8cf0be56-7d4d-4fc5-86a1-fd2c52662b9d",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c9bcb3b9-8b82-4b99-a3c6-18a0715eb628",
+              "name": "resume",
+              "value": "RYAN S. BRECIA AI Automation Specialist with a strong foundation in IT support and hands-on experience in SaaS automation platforms. Skilled at integrating systems, streamlining workflows, and building automation strategies that reduce manual work by up to 30% in test environment, improve client engagement, and drive operational efficiency. Dedicated to delivering measurable business growth through innovative workflow automation and continuous learning. PROFESSIONAL SUMMARY CORE SKILLS & TOOLS Automation Platforms: Make.com, Zapier, n8n (Beginner–Intermediate) CRM & SaaS Tools: GoHighLevel, HubSpot, Notion AI Tools: ChatGPT, Claude, Gemini, Perplexity KEY COMPETENCIES Workflow design & optimization API integrations & multi-app connections CRM automation (pipelines, forms, email campaigns) Documentation & SOP creation Client-focused automation strategy & training PROFESSIONAL EXPERIENCE AI Automation Intern – SaaS / GoHighLevel Platform June 2025 – August 2025 Designed and tested automation workflows in GHL using a sandbox environment, simulating real client use cases. Built CRM pipelines, forms, and appointment calendars to model client engagement processes. Integrated third-party apps in trial accounts to explore multi-app automation strategies. Created SOPs and documentation for automation use cases to support repeatability and scalability. Evaluated workflow performance in test environments and proposed data-driven improvements. ADDITIONAL SKILLS Strong problem-solving & analytical thinking Excellent communication & collaboration skills Time management & task prioritization Adaptability to new SaaS platforms & AI tools EDUCATION Bachelor of Science in Computer Science - Pamantasan ng Lungsod ng Muntinlupa (2013) IT Support Specialist (Supervisor Level) CW Marketing Development Corp. (2016 – 2018) & Five Trees Hotel and Resort Inc. (2018 – 2021) Provided end-to-end IT support for hardware, software, and networks, ensuring smooth daily operations across corporate and hospitality environments. Supervised IT staff and coordinated technical support activities, including scheduling, prioritization, and training. Installed, configured, and maintained servers, POS systems, routers, switches, CCTV, PABX, and Wi-Fi networks, minimizing downtime and improving system reliability. Performed data backups, system monitoring, and preventive maintenance to secure critical business systems (hotel management, HR, and accounting software). Resolved complex technical issues for staff and management, improving response times and user satisfaction. Reported IT operations directly to leadership and collaborated with vendors for escalated support and system upgrades. 📍 SJDM City, Bulacan | ✉️ ryan.brecia@gmail.com | 🔗 linkedin.com/in/ryan-brecia Gained hands-on experience by building and optimizing automation workflows, applying real-world use cases to streamline processes and improve efficiency — view portfolio here.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -160,
+        48
+      ],
+      "id": "660ebf6d-3fb3-44fb-9793-c51e05ced5fd",
+      "name": "Resume"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        -16,
+        -96
+      ],
+      "id": "77387305-e73a-4ee0-b019-3febd5dcfacf",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c6e4ddd5-6aae-4065-9430-170fa51eda70",
+              "name": "job description",
+              "value": "Full job description HIRING: Full-Time AI Automation Specialist!  Details about the position:  ✅ $1000 to $2000 USD per month!  ✅ Work from home!  ✅ 9AM to 6PM Eastern Time - Monday to Friday!  ------------------------  REQUIREMENTS  ✅ Fully fluent in English, both spoken and written.  ✅ Previous experience building automations using Make, Zapier or n8n.  ✅ Previous experience using an AI coding agent such as Claude Code, Cursor, Codex, etc.  You should be comfortable using coding agents to work on repos inside GitHub, make changes, troubleshoot issues, and confirm that the final result works correctly.  A significant part of this role will involve using coding agents to build and improve reusable skills, instructions, and workflows that will be used by AI agents.  ✅ Comfortable working with APIs, webhooks, JSON, authentication, basic scripts, and AI-agent tools such as MCP servers.  You do not need to be an expert in every term listed above. The more you understand, the better, but we can teach specific tools if you have strong fundamentals.  We do not require you to know how to code, but it is a bonus. You do not need to be a professional software developer, but you should understand how different tools communicate with each other and be able to troubleshoot integrations when something goes wrong.  Preferred, but not required:  Previous programming or software-development experience Experience writing or modifying scripts Experience with Google Sheets, Google Forms, Google Drive, Airtable, ClickUp, or GoHighLevel Experience with AI image and video tools such as GPT Image, Kling, Seedance, Grok Imagine, or similar models Experience with agents such as Hermes and OpenClaw You do not need experience with every tool we use. We can teach you our specific systems and workflows, but you must already have hands-on experience with AI coding agents, automation platforms, and AI-powered workflows.  ------------------------  MAIN RESPONSIBILITIES  Your main responsibility would be to automate repetitive processes in the company using mainly AI agents, and some Make/Zapier automations as well.  Common examples might look like:  - Building and improving AI-agent skills, instructions, and workflows.  - Automating the generation of AI ads using image/video AI models.  - Automating the onboarding of new clients.  - Automating some of our copywriter's tasks.  - Automating the tracking of all our data.  We already have A LOT of automations + AI workflows set up - you'd be coming into an already existing system. Your goal would be to improve it and keep it up to date.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -208,
+        -224
+      ],
+      "id": "8fc41a30-f4a2-4895-9a52-5be18bf15cf5",
+      "name": "job description"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are an experienced ATS (Applicant Tracking System) Resume Analyzer used by recruiters.\n\nYour task is to compare the candidate's resume against the provided job description and produce an objective evaluation.\n\nThe resume and the job description are already provided below.\nDo NOT ask for more information.\nBase your analysis only on the supplied content.\n\n## Evaluation Criteria (Weighted)\n\n1. Technical Skills (40%)\n- Compare all required technical skills.\n- Consider exact matches and closely related skills.\n\n2. Work Experience (30%)\n- Compare years of experience.\n- Compare responsibilities and previous roles.\n\n3. Tools & Technologies (20%)\n- Compare software, platforms, frameworks, and AI tools.\n\n4. Soft Skills & Communication (10%)\n- Compare communication, teamwork, leadership, adaptability, and problem solving.\n\n## Scoring Rules\n\nCalculate an ATS Match Score from 0 to 100.\n\n90-100 = Excellent Match\n80-89 = Strong Match\n70-79 = Good Match\n60-69 = Moderate Match\nBelow 60 = Weak Match\n\nNever return 0 unless there are absolutely no matching qualifications.\n\n## Your Analysis Must Include\n\n- ATS Match Score\n- Matching Skills\n- Missing Skills\n- Candidate Strengths\n- Candidate Weaknesses\n- Resume Improvement Recommendations\n- Interview Recommendation\n- Overall Assessment\n\nResume:\n\n{{ $json.resume }}\n\nJob Description:\n\n{{ $json.job_description }}",
+        "hasOutputParser": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        208,
+        -96
+      ],
+      "id": "99a42cbb-6daa-4adf-8ca5-439ef1cddb0c",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": "openai/gpt-oss-120b",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        96,
+        240
+      ],
+      "id": "21ef92ee-cfc6-4ae4-a2be-9930f95829cc",
+      "name": "Groq Chat Model",
+      "credentials": {
+        "groqApi": {
+          "id": "8m7PE76DwDBsa9zK",
+          "name": "Groq account 3"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"match_score\": {\n      \"type\": \"number\",\n      \"description\": \"ATS compatibility score from 0 to 100\"\n    },\n    \"matching_skills\": {\n      \"type\": \"array\",\n      \"description\": \"Skills found in both the resume and the job description\",\n      \"items\": {\n        \"type\": \"string\"\n      }\n    },\n    \"missing_skills\": {\n      \"type\": \"array\",\n      \"description\": \"Important skills required by the job but missing from the resume\",\n      \"items\": {\n        \"type\": \"string\"\n      }\n    },\n    \"strengths\": {\n      \"type\": \"array\",\n      \"description\": \"Candidate's strongest qualifications\",\n      \"items\": {\n        \"type\": \"string\"\n      }\n    },\n    \"weaknesses\": {\n      \"type\": \"array\",\n      \"description\": \"Areas where the candidate is weaker compared to the job requirements\",\n      \"items\": {\n        \"type\": \"string\"\n      }\n    },\n    \"recommendations\": {\n      \"type\": \"array\",\n      \"description\": \"Specific improvements the candidate should make to increase ATS compatibility\",\n      \"items\": {\n        \"type\": \"string\"\n      }\n    },\n    \"interview_recommendation\": {\n      \"type\": \"string\",\n      \"enum\": [\n        \"Highly Recommended\",\n        \"Recommended\",\n        \"Consider\",\n        \"Not Recommended\"\n      ]\n    },\n    \"overall_assessment\": {\n      \"type\": \"string\",\n      \"description\": \"Professional summary explaining the overall fit for the role\"\n    }\n  },\n  \"required\": [\n    \"match_score\",\n    \"matching_skills\",\n    \"missing_skills\",\n    \"strengths\",\n    \"weaknesses\",\n    \"recommendations\",\n    \"interview_recommendation\",\n    \"overall_assessment\"\n  ]\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        496,
+        240
+      ],
+      "id": "56ab3284-2e80-441e-a429-84060faac120",
+      "name": "Structured Output Parser1"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Resume",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "job description",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Resume": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "job description": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser1": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "9ce7aae4-8c31-4e46-ba37-adac020ee407",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "81feeeb69a6455e4dc4b4c0fa91aa81ec2875bbfb13122652f419225a59ca42b"
+  },
+  "nodeGroups": [],
+  "id": "6zII476WNAux9NOy",
+  "tags": []
+}
