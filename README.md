@@ -29,13 +29,13 @@ The workflow accepts two text inputs before sending them to the AI Agent.
 
 This node contains the candidate's resume information used for analysis.
 
-![Resume Input](resume input.png)
+![Resume Input](02-resume-input.png)
 
 ### 💼 Job Description Input
 
 This node contains the job requirements that will be compared against the candidate's resume.
 
-![Job Description Input](job description input.png)
+![Job Description Input](03-job-description-input.png)
 
 ## 🤖 AI Analysis
 
